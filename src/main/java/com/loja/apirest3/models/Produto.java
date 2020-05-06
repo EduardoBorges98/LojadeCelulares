@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
+import com.sun.istack.NotNull;
 
 @Entity
 @Table(name="TB_PRODUTO")
@@ -19,9 +22,15 @@ public class Produto implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
+	@NotNull
 	private String nome;
+	
+	@NotNull
 	private BigDecimal quantidade;
+	
+	@NotNull
 	private BigDecimal valor;
+	
 	public long getId() {
 		return id;
 	}
